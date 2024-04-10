@@ -9,3 +9,11 @@ jobs:
     steps:
     - name: Print Hello World
       run: echo "Hello, World!"
+    - name: More steps
+      run: echo "Running more steps"
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Deploy Hello World
+      run: echo "Deploy Hello, World!"
