@@ -7,6 +7,7 @@ on:
 jobs:
   env-values:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Read vars
         run: echo '${{ toJson(vars) }}'
