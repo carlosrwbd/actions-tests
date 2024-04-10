@@ -13,3 +13,5 @@ jobs:
                 name: hello-artifact
             - name: Print hello world from artifact
               run: cat hello.txt
+            - name: Print DEV_KEY from artifact
+              run: cat dev.txt
