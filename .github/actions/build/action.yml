@@ -1,7 +1,11 @@
 name: Build
 description: Build action
+inputs:
+  repo_key:
+    description: 'Repo key'
+    required: true
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello, World from custom action! ${{env.REPO_KEY}}" > hello.txt
+    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }}" > hello.txt
       shell: bash

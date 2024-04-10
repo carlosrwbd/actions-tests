@@ -11,6 +11,8 @@ jobs:
               uses: actions/checkout@v2
             - name: Print Hello World!
               uses: ./.github/actions/build
+              with:
+                repo_key: ${{ env.REPO_KEY }}
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
