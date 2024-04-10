@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read env variable
-        run: echo ${{ env.REPO_KEY }}
+        run: echo ${{ vars.REPO_KEY }}
   main-build:
     uses: ./.github/workflows/build.yml
   main-deploy:
