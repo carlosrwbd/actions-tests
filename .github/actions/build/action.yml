@@ -7,5 +7,5 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }} vars ${{ vars.REPO_KEY }}" > hello.txt
+    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }}" > hello.txt
       shell: bash
