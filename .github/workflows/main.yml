@@ -8,8 +8,10 @@ jobs:
   env-values:
     runs-on: ubuntu-latest
     steps:
-      - name: Read env variable
-        run: echo ${{ vars.REPO_KEY }}
+      - name: Read vars
+        run: echo ${{ toJson(vars) }}
+      - name: Read secrets
+        run: echo ${{ toJSON(secrets) }}
   main-build:
     uses: ./.github/workflows/build.yml
   main-deploy:
