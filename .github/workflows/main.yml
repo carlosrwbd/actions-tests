@@ -3,31 +3,8 @@ name: Hello World Workflow
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Creating Hello World artifact
-      run: echo "Hello, World!"  > hello.txt
-    - name: More steps
-      run: echo "Running more steps"
-    - name:  Wait for 30 seconds
-      run: echo "Waiting for 30 seconds" && sleep 30
-    - name: Run more steps after waiting
-      run: echo "Running more steps after waiting"
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: hello-artifact
-        path: hello.txt
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: hello-artifact
-    - name: Print Deploy Hello World from actifact
-      run: cat hello.txt
+  main-build:
+    uses: ./.github/workflows/build.yml
+  main-deploy:
+    needs: main-build
+    uses: ./.github/workflows/deploy.yml
