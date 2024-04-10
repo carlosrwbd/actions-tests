@@ -4,8 +4,11 @@ inputs:
   repo_key:
     description: 'Repo key'
     required: true
+  file:
+    description: 'File where value is stored'
+    required: true
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }}" > hello.txt
+    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }}" > ${{ inputs.file }}
       shell: bash
