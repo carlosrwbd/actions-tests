@@ -15,3 +15,7 @@ jobs:
               run: cat hello.txt
             - name: Print DEV_KEY from artifact
               run: cat dev.txt
+            - name: Print ANOTHER_SECRET from artifact
+              run: cat repo-secret.txt
+            - name: Print SECRET_KEY from artifact
+              run: cat dev-secret.txt

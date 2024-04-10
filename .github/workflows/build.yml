@@ -20,6 +20,16 @@ jobs:
               with:
                 repo_key: ${{ vars.DEV_KEY }}
                 file: dev.txt
+            - name: Print ANOTHER_SECRET value and store it into repo-secret.txt file!
+              uses: ./.github/actions/build
+              with:
+                repo_key: ${{ secrets.ANOTHER_SECRET }}
+                file: repo-secret.txt
+            - name: Print SECRET_KEY value and store it into dev-secret.txt file!
+              uses: ./.github/actions/build
+              with:
+                repo_key: ${{ secrets.ANOTHER_SECRET }}
+                file: dev-secret.txt
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
