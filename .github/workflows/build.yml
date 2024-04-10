@@ -13,22 +13,22 @@ jobs:
             - name: Print REPO KEY value and store it into hello.txt file!
               uses: ./.github/actions/build
               with:
-                repo_key: ${{ vars.REPO_KEY }}
+                name: ${{ vars.REPO_KEY }}
                 file: hello.txt
             - name: Print DEV_KEY value and store it into dev.txt file!
               uses: ./.github/actions/build
               with:
-                repo_key: ${{ vars.DEV_KEY }}
+                name: ${{ vars.DEV_KEY }}
                 file: dev.txt
             - name: Print ANOTHER_SECRET value and store it into repo-secret.txt file!
               uses: ./.github/actions/build
               with:
-                repo_key: ${{ secrets.ANOTHER_SECRET }}
+                name: ${{ secrets.ANOTHER_SECRET }}
                 file: repo-secret.txt
             - name: Print SECRET_KEY value and store it into dev-secret.txt file!
               uses: ./.github/actions/build
               with:
-                repo_key: ${{ secrets.ANOTHER_SECRET }}
+                name: ${{ secrets.ANOTHER_SECRET }}
                 file: dev-secret.txt
             - name: Upload artifact
               uses: actions/upload-artifact@v4

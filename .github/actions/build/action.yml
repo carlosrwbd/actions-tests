@@ -1,8 +1,8 @@
 name: Build
 description: Build action
 inputs:
-  repo_key:
-    description: 'Repo key'
+  name:
+    description: 'Variable name'
     required: true
   file:
     description: 'File where value is stored'
@@ -10,5 +10,5 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello, World from custom action! ${{ inputs.repo_key }}" > ${{ inputs.file }}
+    - run: echo "Hello ${{ inputs.name }}" > ${{ inputs.file }}
       shell: bash
