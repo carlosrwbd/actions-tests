@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read vars
-        run: echo ${{ toJson(vars) }}
+        run: echo '${{ toJson(vars) }}'
       - name: Read secrets
-        run: echo ${{ toJSON(secrets) }}
+        run: echo '${{ toJSON(secrets) }}'
   main-build:
     uses: ./.github/workflows/build.yml
   main-deploy:
