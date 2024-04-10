@@ -1,0 +1,6 @@
+name: Build
+description: Build action
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Hello, World from custom action!" > hello.txt
