@@ -11,6 +11,10 @@ jobs:
       run: echo "Hello, World!"
     - name: More steps
       run: echo "Running more steps"
+    - name:  Wait for 30 seconds
+      run: echo "Waiting for 30 seconds" && sleep 30
+    - name: Run more steps after waiting
+      run: echo "Running more steps after waiting"
   deploy:
     runs-on: ubuntu-latest
 
