@@ -8,6 +8,8 @@ jobs:
         runs-on: ubuntu-latest
         environment: dev
         steps:
+            - name: Read secrets
+              run: echo '${{ toJSON(secrets) }}'
             - name: Checkout code
               uses: actions/checkout@v2
             - name: Print REPO KEY value and store it into hello.txt file!
