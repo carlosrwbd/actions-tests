@@ -12,7 +12,7 @@ jobs:
             - name: Print Hello World!
               uses: ./.github/actions/build
               with:
-                repo_key: ${{ env.REPO_KEY }}
+                repo_key: hardcoded-key
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
