@@ -3,5 +3,5 @@ description: Build action
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello, World from custom action! $REPO_KEY" > hello.txt
+    - run: echo "Hello, World from custom action! ${{evn.REPO_KEY}}" > hello.txt
       shell: bash
