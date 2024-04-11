@@ -2,6 +2,11 @@ name: Build
 
 on:
     workflow_call:
+        secrets:
+            SECRET_KEY:
+                required: true
+            ANOTHER_SECRET:
+                required: true
 
 jobs:
     build:
@@ -30,7 +35,7 @@ jobs:
             - name: Print SECRET_KEY value and store it into dev-secret.txt file!
               uses: ./.github/actions/build
               with:
-                name: ${{ secrets.ANOTHER_SECRET }}
+                name: ${{ secrets.SECRET_KEY }}
                 file: dev-secret.txt
             - name: Upload artifact
               uses: actions/upload-artifact@v4
